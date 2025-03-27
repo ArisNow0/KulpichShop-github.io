@@ -1,0 +1,782 @@
+/* Базовые стили */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../fonts/minecraft.ttf') format('truetype');
+}
+
+:root {
+    --mc-dark: #1a1a1a;
+    --mc-darker: #0f0f0f;
+    --mc-light: #f0f0f0;
+    --mc-white: #ffffff;
+    --mc-black: #000000;
+    --mc-green: #7CFC00;
+    --mc-blue: #4169E1;
+    --mc-light-blue: #ADD8E6;
+    --mc-purple: #9370DB;
+    --mc-red: #FF4500;
+    --mc-yellow: #FFD700;
+    --mc-gray: #808080;
+    --mc-dark-green: #006400;
+    --mc-grass-top: #55AB55;
+    --mc-grass-side: #4D994D;
+    --mc-dirt: #8B4513;
+    --mc-stone: #808080;
+    --mc-wood: #8B4513;
+    --mc-plank: #DEB887;
+    --mc-water: #1E90FF;
+    --mc-lava: #FF4500;
+    --mc-diamond: #00BFFF;
+    --mc-emerald: #50C878;
+    --mc-gold: #FFD700;
+    --mc-iron: #C0C0C0;
+    --mc-coal: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--mc-dark);
+    color: var(--mc-light);
+    font-family: 'Minecraft', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.mc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка в стиле Minecraft */
+.mc-header {
+    background-color: var(--mc-darker);
+    border-bottom: 4px solid var(--mc-green);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.mc-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mc-avatar {
+    width: 50px;
+    height: 50px;
+    image-rendering: pixelated;
+    border: 2px solid var(--mc-green);
+}
+
+.mc-title {
+    font-size: 24px;
+    color: var(--mc-light);
+    text-shadow: 2px 2px 0 var(--mc-black);
+    letter-spacing: 1px;
+}
+
+.mc-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mc-nav-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 120px;
+}
+
+.mc-btn-top, .mc-btn-bottom {
+    height: 4px;
+    background-color: var(--mc-green);
+}
+
+.mc-btn-content {
+    padding: 8px 0;
+    background-color: var(--mc-dark-green);
+    color: var(--mc-light);
+    text-align: center;
+    font-size: 14px;
+    text-shadow: 1px 1px 0 var(--mc-black);
+}
+
+.mc-nav-btn.active .mc-btn-content {
+    background-color: var(--mc-green);
+    color: var(--mc-black);
+    text-shadow: none;
+}
+
+/* Текстура травы */
+.mc-grass {
+    height: 20px;
+    background: 
+        linear-gradient(135deg, var(--mc-grass-top) 25%, transparent 25%) -20px 0,
+        linear-gradient(225deg, var(--mc-grass-top) 25%, transparent 25%) -20px 0,
+        linear-gradient(315deg, var(--mc-grass-top) 25%, transparent 25%),
+        linear-gradient(45deg, var(--mc-grass-top) 25%, transparent 25%);
+    background-size: 40px 40px;
+    background-color: var(--mc-grass-side);
+    border-bottom: 2px solid var(--mc-dirt);
+}
+
+/* Основной контент */
+.mc-main {
+    padding: 30px 0;
+    background-color: var(--mc-dark);
+    min-height: calc(100vh - 154px);
+}
+
+/* Герой-секция */
+.mc-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.mc-hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mc-hero-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    height: 400px;
+}
+
+.mc-pixel-text {
+    font-family: 'Minecraft';
+    font-size: 18px;
+    color: var(--mc-green);
+    text-shadow: 2px 2px 0 var(--mc-black);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.mc-pixel-title {
+    font-family: 'Minecraft';
+    font-size: 36px;
+    color: var(--mc-light);
+    text-shadow: 3px 3px 0 var(--mc-black);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.mc-pixel-title.small {
+    font-size: 24px;
+    text-shadow: 2px 2px 0 var(--mc-black);
+}
+
+.mc-pixel-paragraph {
+    font-family: 'Minecraft';
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.mc-pixel-paragraph.small {
+    font-size: 14px;
+}
+
+.mc-btn {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 180px;
+    margin-top: 20px;
+}
+
+.mc-btn.small {
+    width: 120px;
+}
+
+.mc-character {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 10px rgba(124, 252, 0, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+.mc-block {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    image-rendering: pixelated;
+    animation: rotate 20s infinite linear;
+}
+
+.mc-block.diamond {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA+UlEQVRIie3UMUoDQRTG8Z8psJBUKTyAR7ATvIBgYSM2Fp7AG3gDG8HGQkghaGOTwkYhhYWFoGAhKFiIhYUgvjQzZLOb7M5mU3zwYWGHmff/3ryZN8x/1dQ5dnCJd3zgDnc4x0aVgG1c4Q1PmGAGQxjgBW+4x3Y/gS3c4hVP2O0S3sU9PnGJtV7gNp7xjIOc4B5e8Yz1XuA2XvCItZzgPl7xiLVu4Dpe8YiVnOA+XvGIlW7gOl7xiJWM4D5e8YjljOA+XvGIpYzgPl7xiKWM4D5e8YjFjOA+XvGIxYzgPl7xiIWM4D5e8Yj5/wbP4QxPeQf9VQ3XcYJx3kF/VcM1HGOcd9Bf1XANRxjlHfRXNVzDIUZ5B/1VDddwgGHeQX9VwzXsY5h30F/VcA17GOQd9Fc1XMMuBnkH/VUN17CDQd5Bf1XDNWxjkHfQX9VwDVsY5B30VzVcwyYGeQf9VQ3XsIFB3kF/VcM1rGGQd9Bf1XANq3jPO+ivarj2Cb3kHfNXNVz7hJ7yjvmrGq59Qg95x/xVDdfwjfu8Y/6qhmv4wl3eMX9VwzV84jbvmL+q4Ro+cJN3zF/VcA3vuM475q9quIZXXOUd81c1XMMLLvOO+asaruEZF3nH/FUN1/CE87xj/qqGa3jEWd4xf1XDNTzgNO+Yv6rhGu5xknfMX9VwDXc4zjvmr2q4hlsc5R3zVzVcww0O8475qxqu4Rr7ecf8VQ3XcIX/4BXyE3hZ0QAAAABJRU5ErkJggg==');
+    top: 20%;
+    left: 10%;
+}
+
+.mc-block.emerald {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABFUlEQVRIie3UMUoDQRTG8Z8psJBUKTyAR7ATvIBgYSM2Fp7AG3gDG8HGQkghaGOTwkYhhYWFoGAhKFiIhYUgvjQzZLOb7M5mU3zwYWGHmff/3ryZN8x/1dQ5dnCJd3zgDnc4x0aVgG1c4Q1PmGAGQxjgBW+4x3Y/gS3c4hVP2O0S3sU9PnGJtV7gNp7xjIOc4B5e8Yz1XuA2XvCItZzgPl7xiLVu4Dpe8YiVnOA+XvGIlW7gOl7xiJWM4D5e8YjljOA+XvGIpYzgPl7xiKWM4D5e8YjFjOA+XvGIxYzgPl7xiIWM4D5e8Yj5/wbP4QxPeQf9VQ3XcYJx3kF/VcM1HGOcd9Bf1XANRxjlHfRXNVzDIUZ5B/1VDddwgGHeQX9VwzXsY5h30F/VcA17GOQd9Fc1XMMuBnkH/VUN17CDQd5Bf1XDNWxjkHfQX9VwDVsY5B30VzVcwyYGeQf9VQ3XsIFB3kF/VcM1rGGQd9Bf1XANq3jPO+ivarj2Cb3kHfNXNVz7hJ7yjvmrGq59Qg95x/xVDdfwjfu8Y/6qhmv4wl3eMX9VwzV84jbvmL+q4Ro+cJN3zF/VcA3vuM475q9quIZXXOUd81c1XMMLLvOO+asaruEZF3nH/FUN1/CE87xj/qqGa3jEWd4xf1XDNTzgNO+Yv6rhGu5xknfMX9VwDXc4zjvmr2q4hlsc5R3zVzVcww0O8475qxqu4Rr7ecf8VQ3XcIX/4BXyE3hZ0QAAAABJRU5ErkJggg==');
+    top: 30%;
+    right: 15%;
+}
+
+.mc-block.gold {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABFUlEQVRIie3UMUoDQRTG8Z8psJBUKTyAR7ATvIBgYSM2Fp7AG3gDG8HGQkghaGOTwkYhhYWFoGAhKFiIhYUgvjQzZLOb7M5mU3zwYWGHmff/3ryZN8x/1dQ5dnCJd3zgDnc4x0aVgG1c4Q1PmGAGQxjgBW+4x3Y/gS3c4hVP2O0S3sU9PnGJtV7gNp7xjIOc4B5e8Yz1XuA2XvCItZzgPl7xiLVu4Dpe8YiVnOA+XvGIlW7gOl7xiJWM4D5e8YjljOA+XvGIpYzgPl7xiKWM4D5e8YjFjOA+XvGIxYzgPl7xiIWM4D5e8Yj5/wbP4QxPeQf9VQ3XcYJx3kF/VcM1HGOcd9Bf1XANRxjlHfRXNVzDIUZ5B/3VH9dwCENYwz7OcI1HvOINz7jBCXaxgqGqgVt4wD2mMZET3sYd3rFQJXABt3jBfE5wHjd4xXyVwDnc4BnTOcFZ3OAVc1UCZ3GNF0zlBKdxg1fMVAmcxjVeMZETnMQNXjFRJXAC13jHeE5wHDd4x3iVwDFc4xNjOcFR3OATo1UCR3GNT4zkBEdwg0+MVAmM4BqfGM4JDuMGnxiuEhjGDT4xlBMcwg0+MVQlMIQbfGIwJziIG3xisEpggP8Hn+AX8hN4WdEAAAAASUVORK5CYII=');
+    bottom: 15%;
+    left: 20%;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Секция "О Kulpich" */
+.mc-about {
+    margin-bottom: 50px;
+}
+
+.mc-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.mc-stick {
+    height: 4px;
+    flex: 1;
+    max-width: 100px;
+    background-color: var(--mc-green);
+}
+
+.mc-about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.mc-about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.mc-about-features {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mc-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.mc-stat-item {
+    text-align: center;
+}
+
+.mc-stat-icon {
+    font-size: 24px;
+    color: var(--mc-green);
+    margin-bottom: 5px;
+}
+
+.mc-stat-value {
+    font-size: 24px;
+    color: var(--mc-light);
+    margin-bottom: 5px;
+}
+
+.mc-stat-label {
+    font-size: 14px;
+    color: var(--mc-gray);
+}
+
+.mc-feature {
+    background-color: var(--mc-darker);
+    padding: 20px;
+    border-top: 3px solid var(--mc-green);
+    text-align: center;
+}
+
+.mc-feature-icon {
+    font-size: 30px;
+    color: var(--mc-green);
+    margin-bottom: 10px;
+}
+
+/* Карточки товаров */
+.mc-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.mc-products-grid.full {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.mc-product-card {
+    background-color: var(--mc-darker);
+    border-top: 3px solid var(--mc-green);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.mc-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.mc-product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--mc-black);
+    z-index: 2;
+}
+
+.mc-product-badge.hit {
+    background-color: var(--mc-red);
+}
+
+.mc-product-badge.new {
+    background-color: var(--mc-blue);
+}
+
+.mc-product-badge.digital {
+    background-color: var(--mc-purple);
+}
+
+.mc-product-badge.custom {
+    background-color: var(--mc-yellow);
+}
+
+.mc-product-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    image-rendering: pixelated;
+}
+
+.mc-product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.mc-product-info {
+    padding: 15px;
+}
+
+.mc-product-price {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mc-price {
+    font-size: 20px;
+    color: var(--mc-light);
+}
+
+.mc-old-price {
+    font-size: 14px;
+    color: var(--mc-gray);
+    text-decoration: line-through;
+}
+
+/* Элементы управления магазином */
+.mc-shop-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.mc-search {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.mc-search i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mc-gray);
+}
+
+.mc-search-input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    background-color: var(--mc-darker);
+    border: 2px solid var(--mc-green);
+    color: var(--mc-light);
+    font-family: 'Minecraft';
+    font-size: 14px;
+}
+
+.mc-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mc-filter-btn {
+    padding: 8px 15px;
+    background-color: var(--mc-darker);
+    border: 2px solid var(--mc-green);
+    color: var(--mc-light);
+    font-family: 'Minecraft';
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.mc-filter-btn.active {
+    background-color: var(--mc-green);
+    color: var(--mc-black);
+}
+
+/* Пагинация */
+.mc-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.mc-page-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    cursor: pointer;
+}
+
+.mc-page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mc-page-btn.active .mc-btn-content {
+    background-color: var(--mc-green);
+    color: var(--mc-black);
+}
+
+/* Хлебные крошки */
+.mc-breadcrumbs {
+    padding: 15px 0;
+    background-color: var(--mc-darker);
+    border-bottom: 2px solid var(--mc-green);
+}
+
+.mc-breadcrumb {
+    color: var(--mc-light);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.mc-breadcrumb.active {
+    color: var(--mc-green);
+}
+
+.mc-breadcrumb-divider {
+    color: var(--mc-gray);
+    margin: 0 5px;
+}
+
+/* Подвал в стиле нижнего мира */
+.mc-footer {
+    background-color: var(--mc-darker);
+    border-top: 4px solid var(--mc-red);
+    padding: 30px 0 15px;
+}
+
+.mc-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.mc-footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mc-small-avatar {
+    width: 50px;
+    height: 50px;
+    image-rendering: pixelated;
+    border: 2px solid var(--mc-red);
+}
+
+.mc-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mc-social-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--mc-black);
+    color: var(--mc-light);
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.mc-social-btn.twitch {
+    background-color: var(--mc-purple);
+}
+
+.mc-social-btn.youtube {
+    background-color: var(--mc-red);
+}
+
+.mc-social-btn.telegram {
+    background-color: var(--mc-blue);
+}
+
+.mc-footer-link {
+    color: var(--mc-gray);
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.mc-footer-link:hover {
+    color: var(--mc-red);
+}
+
+.mc-copyright {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--mc-gray);
+    color: var(--mc-gray);
+    font-size: 12px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .mc-hero-image {
+        height: 300px;
+    }
+    
+    .mc-block {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .mc-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+.Kulpsich{
+    width: 230%;
+}
+@media (max-width: 1800px) {
+    .Kulpsich{
+        width: 150%;
+    }
+}
+
+@media (max-width: 480px) {
+    .mc-nav {
+        flex-wrap: wrap;
+    }
+    
+    .mc-nav-btn {
+        width: 100px;
+    }
+    
+    .mc-pixel-title {
+        font-size: 28px;
+    }
+}
+/* Стили для модального окна */
+.mc-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow: auto;
+    }
+    
+    .mc-modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        max-height: 80vh;
+        margin-top: 10vh;
+        animation: zoom 0.3s;
+    }
+    
+    @keyframes zoom {
+        from {transform: scale(0.5);}
+        to {transform: scale(1);}
+    }
+    
+    .mc-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    
+    .mc-modal-close:hover {
+        color: #7CFC00;
+    }
+    
+    .mc-modal-caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        font-family: 'Minecraft', Arial, sans-serif;
+    }
+
+    /* Стили для кнопки "Купить" */
+.mc-btn {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 120px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: 'Minecraft', Arial, sans-serif;
+}
+
+.mc-btn.small {
+    width: 100px;
+}
+
+.mc-btn-top, .mc-btn-bottom {
+    height: 4px;
+    background-color: #55ff55; /* Ярко-зеленый как в Minecraft */
+    transition: all 0.2s ease;
+}
+
+.mc-btn-content {
+    padding: 8px 0;
+    background-color: #3cb371; /* Зеленый цвет кнопки */
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    text-shadow: 1px 1px 0 #000;
+    transition: all 0.2s ease;
+}
+
+/* Анимация при наведении */
+.mc-btn:hover .mc-btn-top {
+    transform: translateY(2px);
+    background-color: #7CFC00; /* Светло-зеленый */
+}
+
+.mc-btn:hover .mc-btn-content {
+    background-color: #2E8B57; /* Темно-зеленый */
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.mc-btn:hover .mc-btn-bottom {
+    transform: translateY(-2px);
+    background-color: #7CFC00; /* Светло-зеленый */
+}
+
+/* Анимация при нажатии */
+.mc-btn:active .mc-btn-top {
+    transform: translateY(4px);
+    background-color: #32CD32;
+}
+
+.mc-btn:active .mc-btn-content {
+    background-color: #228B22;
+    transform: translateY(2px);
+}
+
+.mc-btn:active .mc-btn-bottom {
+    transform: translateY(-4px);
+    background-color: #32CD32;
+}
+
+/* Эффект "нажатой" кнопки */
+.mc-btn.active .mc-btn-top {
+    height: 2px;
+    transform: translateY(4px);
+}
+
+.mc-btn.active .mc-btn-content {
+    background-color: #228B22;
+    transform: translateY(2px);
+    padding: 6px 0;
+}
+
+.mc-btn.active .mc-btn-bottom {
+    height: 2px;
+    transform: translateY(-4px);
+}

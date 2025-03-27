@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulpich | Магазин Minecraft мерча</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/images/logo/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg" />
+<link rel="shortcut icon" href="/images/logo/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Huita" />
+<link rel="manifest" href="/images/logo/site.webmanifest" />
+</head>
+<body>
+    <!-- Minecraft-стиль верхнего меню -->
+    <header class="mc-header">
+        <div class="mc-container">
+            <div class="mc-logo">
+                <img src="images/ava.png" alt="Kulpich" class="mc-avatar">
+                <h1 class="mc-title">KULPICH SHOP</h1>
+            </div>
+            <nav class="mc-nav">
+                <a href="index.html" class="mc-nav-btn">
+                    <span class="mc-btn-top"></span>
+                    <span class="mc-btn-content">Главная</span>
+                    <span class="mc-btn-bottom"></span>
+                </a>
+                <a href="shop.html" class="mc-nav-btn active">
+                    <span class="mc-btn-top"></span>
+                    <span class="mc-btn-content">Магазин</span>
+                    <span class="mc-btn-bottom"></span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Блок с текстурой травы -->
+    <div class="mc-grass"></div>
+
+    <!-- Хлебные крошки -->
+    <div class="mc-breadcrumbs">
+        <div class="mc-container">
+            <a href="index.html" class="mc-breadcrumb">Главная</a>
+            <span class="mc-breadcrumb-divider">/</span>
+            <a href="shop.html" class="mc-breadcrumb active">Магазин</a>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="mc-main">
+        <div class="mc-container">
+            <!-- Заголовок магазина -->
+            <section class="mc-shop-header">
+                <div class="mc-section-header">
+                    <div class="mc-stick"></div>
+                    <h2 class="mc-pixel-title">MАГАЗИН МЕРЧА</h2>
+                    <div class="mc-stick"></div>
+                </div>
+                <p class="mc-pixel-paragraph">Официальная коллекция товаров с символикой Kulpich</p>
+                
+                <div class="mc-shop-controls">
+                    <div class="mc-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Поиск товаров..." class="mc-search-input">
+                    </div>
+                    <div class="mc-filters">
+                        <button class="mc-filter-btn active">Все</button>
+                        <button class="mc-filter-btn">Одежда</button>
+                        <button class="mc-filter-btn">Аксессуары</button>
+                        <button class="mc-filter-btn">Коллекционные</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Сетка товаров -->
+            <section class="mc-products-grid full">
+                <!-- Футболка -->
+                <div class="mc-product-card">
+                    <div class="mc-product-badge hit">ХИТ</div>
+                    <div class="mc-product-image">
+                        <img src="images/fut_fuh.png" alt="Футболка Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Футболка "Фух, сделал видео!"</h3>
+                        <p class="mc-pixel-paragraph small">Белая футболка с принтом Kulpich</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">1,499 ₽</span>
+                            <span class="mc-old-price">1,999 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+
+                <div class="mc-product-card">
+                    <div class="mc-product-image">
+                        <img src="images/fut_ah.png" alt="Футболка Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Футболка "АХ!"</h3>
+                        <p class="mc-pixel-paragraph small">Белая футболка с принтом Kulpich которого давит пресс</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">1,499 ₽</span>
+                            <span class="mc-old-price">1,999 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                <div class="mc-product-card">
+                    <div class="mc-product-image">
+                    <div class="mc-product-badge hit">ХИТ</div>
+                        <img src="images/fut_vau.png" alt="Футболка Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Футболка " :о "</h3>
+                        <p class="mc-pixel-paragraph small">Черная футболка с принтом Kulpich которого упал</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">1,499 ₽</span>
+                            <span class="mc-old-price">1,999 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                
+                <!-- Худи -->
+                <div class="mc-product-card">
+                    <div class="mc-product-badge new">NEW</div>
+                    <div class="mc-product-image">
+                        <img src="images/huhi.png" alt="Худи Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Худи "Тазик"</h3>
+                        <p class="mc-pixel-paragraph small">Теплое худи с капюшоном в фирменных цветах</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">3,999 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                
+                <!-- Плюшевая игрушка -->
+                <div class="mc-product-card">
+                    <div class="mc-product-image">
+                        <img src="images/chibi.png" alt="Плюшевая игрушка Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Плюш "Kitsune" 25mm</h3>
+                        <p class="mc-pixel-paragraph small">Мягкая плюшевая игрушка с маской кицуне в полный рост Кульпича</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">2,499 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                
+                <!-- Комикс -->
+                <div class="mc-product-card">
+                    <div class="mc-product-image">
+                        <img src="images/Comic.png" alt="Комикс Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Комикс "Шуточки"</h3>
+                        <p class="mc-pixel-paragraph small">Эксклюзивный комикс о очень интересных(нет) шутках Кульпича</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">899 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                
+                <!-- Игра -->
+                <div class="mc-product-card">
+                    <div class="mc-product-badge digital">Цифровой</div>
+                    <div class="mc-product-image">
+                        <img src="images/game.png" alt="Игра Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Игра "Aduentura"</h3>
+                        <p class="mc-pixel-paragraph small">Инди-игра с участием Kulpich (ключ для Steam)</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">499 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+                
+                <!-- Аватарка -->
+                <div class="mc-product-card">
+                    <div class="mc-product-badge custom">Персонализация</div>
+                    <div class="mc-product-image">
+                        <img src="images/super_ava.png" alt="Аватарка Kulpich" class="mc-product-img" onclick="openModal(this)">
+                    </div>
+                    <div class="mc-product-info">
+                        <h3 class="mc-pixel-title small">Эксклюзивная аватарка</h3>
+                        <p class="mc-pixel-paragraph small">Персонализированная аватарка для соцсетей, сделана профессионал самим кульпичем!</p>
+                        <div class="mc-product-price">
+                            <span class="mc-price">1,999 ₽</span>
+                        </div>
+    <a href="https://www.youtube.com/watch?v=Vme8EXJedEg" target="_blank" class="mc-btn-link">
+        <button class="mc-btn small">
+            <span class="mc-btn-top"></span>
+            <span class="mc-btn-content">В корзину</span>
+            <span class="mc-btn-bottom"></span>
+        </button>
+    </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Модальное окно для изображений -->
+    <div id="mcModal" class="mc-modal">
+        <span class="mc-modal-close" onclick="closeModal()">&times;</span>
+        <img class="mc-modal-content" id="modalImage">
+        <div id="caption" class="mc-modal-caption"></div>
+    </div>
+
+    <!-- Подвал в стиле нижнего мира -->
+    <footer class="mc-footer">
+        <div class="mc-container">
+            <div class="mc-footer-grid">
+                <div class="mc-footer-col">
+                    <div class="mc-footer-logo">
+                        <img src="images/ava.png" alt="Kulpich" class="mc-small-avatar">
+                        <span class="mc-pixel-text">KULPICH</span>
+                    </div>
+                    <p class="mc-pixel-paragraph">Не Официальный магазин мерча</p>
+                    <div class="mc-social">
+                        <a href="https://www.twitch.tv/kulpich" class="mc-social-btn twitch"><i class="fab fa-twitch"></i></a>
+                        <a href="https://t.me/kelp_a" class="mc-social-btn youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.patreon.com/c/kulpich/home" class="mc-social-btn telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="mc-footer-col">
+                    <h3 class="mc-pixel-title small">Меню</h3>
+                    <a href="index.html" class="mc-footer-link">Главная</a>
+                    <a href="shop.html" class="mc-footer-link">Магазин</a>
+                    <a href="index.html#mc-about" class="mc-footer-link">О Kulpich</a>
+                </div>
+                <div class="mc-footer-col">
+                    <h3 class="mc-pixel-title small">Контакты</h3>
+                    <a href="mailto:gmail.com@kulpich" class="mc-footer-link">gmail.com@kulpich</a>
+                    <a href="https://youtu.be/_-SBd2TrLrU?si=lGpNg5v8ufmPM03i" class="mc-footer-link">Поддержка</a>
+                    <a href="https://youtu.be/_-SBd2TrLrU?si=lGpNg5v8ufmPM03i" class="mc-footer-link">Для СМИ</a>
+                    <a href="https://youtu.be/_-SBd2TrLrU?si=lGpNg5v8ufmPM03i" class="mc-footer-link">Сотрудничество</a>
+                </div>
+            </div>
+            <div class="mc-copyright">
+                <p class="mc-pixel-paragraph small">© 2025 Kulpich Not Official Merch. Все не права защищены. <a href="https://arisnow0.github.io"> Сайт сделан на коленки меньше за неделю мной)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
